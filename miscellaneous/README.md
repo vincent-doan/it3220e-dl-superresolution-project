@@ -5,3 +5,5 @@ This repository contains a Python script that demonstrates how to downscale an i
 - Nearest neighbor
 - Bilinear
 - Bicubic
+
+![alt text](downscale-results.png "Different interpolation methods")
