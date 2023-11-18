@@ -25,7 +25,7 @@ CVPR 2018) and @ PIRM (ECCV 2018)
 
 In essence, the dataset is really a Python dictionary of links (which is why dtype='string') to the high-resolution and corresponding low-resolution images.
 
-### Configuration information
+## Configuration information
 ```
 from datasets import get_dataset_config_names
 
