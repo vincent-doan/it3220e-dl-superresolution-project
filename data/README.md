@@ -114,4 +114,4 @@ Parameters in consideration when creating a dataloader include
 
 After being created, the dataloader can be used as normal.
 
-For the first run of any dataloader, data downloading will begin. In later uses, this will be skipped.
+For the first run of any dataloader, data downloading will begin. Files will be stored in the `cache` folder in the root directory. In later uses, this will be skipped.
