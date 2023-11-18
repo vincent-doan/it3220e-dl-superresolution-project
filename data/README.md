@@ -64,7 +64,7 @@ There are 800 images for training, and 100 for validation. The private test data
 !pip install -q -r it3220e-dl-superresolution-project/requirements.txt
 ```
 
-**3. Us3 the DIV2KDataLoader class**
+**3. Use the DIV2KDataLoader class**</br>
 Here is a sample piece of code.
 ```
 from data.dataloaders import DIV2KDataLoader
