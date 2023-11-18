@@ -51,7 +51,7 @@ class DIV2KDataset(Dataset):
         return len(self.dataset)
     
 class DIV2KDataLoader(DataLoader):
-    def __init__(self, split:str="train", downscale_type:str="bicubic", scale:int=2, transforms:Compose=None, seed:int=1989, cache_dir:str=cache_dir, batch_size:int=1, shuffle:bool=True, num_crops:int=1):
+    def __init__(self, split:str="train", downscale_type:str="bicubic", scale:int=4, transforms:Compose=None, seed:int=1989, cache_dir:str=cache_dir, batch_size:int=1, shuffle:bool=True, num_crops:int=1):
         sub_datasets = [DIV2KDataset(split=split, downscale_type=downscale_type, scale=scale, transforms=transforms, seed=seed+int(random.random()*10), cache_dir=cache_dir) for _ in range(num_crops)]
         self.dataset = ConcatDataset(sub_datasets)
         super().__init__(self.dataset, batch_size=batch_size, shuffle=shuffle)
