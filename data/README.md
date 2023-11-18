@@ -58,10 +58,11 @@ There are 800 images for training, and 100 for validation. The private test data
 ```
 !git clone https://github.com/vincent-doan/it3220e-dl-superresolution-project.git
 ```
+Go to the root directory.
 
 **2. Install the necessary packages**
 ```
-!pip install -q -r it3220e-dl-superresolution-project/requirements.txt
+!pip install -q -r requirements.txt
 ```
 
 **3. Use the DIV2KDataLoader class**</br>
@@ -112,3 +113,5 @@ Parameters in consideration when creating a dataloader include
 | num_crops        | int                   | number of random crops - the size of the dataset will be multiplied accordingly                                          | 1        |
 
 After being created, the dataloader can be used as normal.
+
+For the first run of any dataloader, data downloading will begin. In later uses, this will be skipped.
