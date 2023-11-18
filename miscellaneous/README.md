@@ -6,4 +6,4 @@ This repository contains a Python script that demonstrates how to downscale an i
 - Bilinear
 - Bicubic
 
-![alt text](downscale-results.png "Different interpolation methods")
+![alt text](figure-downscaled.png "Different interpolation methods")

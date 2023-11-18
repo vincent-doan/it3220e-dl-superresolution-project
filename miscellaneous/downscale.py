@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 fig, axes = plt.subplots(nrows=1, ncols=4, figsize=(15, 15))
 
-img = Image.open('taylor.png')
+img = Image.open('figure.png')
 
 # Original image (320x320)
 initial_transforms = transforms.Compose([
