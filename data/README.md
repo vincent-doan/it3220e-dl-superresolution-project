@@ -71,7 +71,8 @@ Here is a sample piece of code.
 from data.dataloaders import DIV2KDataLoader
 import matplotlib.pyplot as plt
 
-train_dataloader = DIV2KDataLoader(split="train", downscale_type="bicubic", scale=8, transforms=None, seed=1989, output_size=(384, 384), batch_size=1, shuffle=True, num_crops=2)
+train_dataloader = DIV2KDataLoader(split="train", downscale_type="bicubic", scale=8, transforms=None, seed=1989, 
+output_size=(384, 384), batch_size=1, shuffle=True, num_crops=2)
 print("Length of train_dataloader: {}".format(len(train_dataloader)))
 
 lrs, hrs = next(iter(train_dataloader))
@@ -96,7 +97,7 @@ plt.show()
 
 ![alt text](figure.png "Sample image from DataLoader")
 
-Two transformations are automatically done - a 768x768 crop (making sure the content of both the low-resolution and high-resolution images still matches) and a ToTensor
+Two transformations are automatically done - a crop of specified size (making sure the content of both the low-resolution and high-resolution images still matches) and a ToTensor
 
 Note that the length of the dataloader is now 1600, while the original training set only contains 800. This is because by specifying num_crops=2, we are essentially creating two datasets by cropping each image randomly two times. The two datasets are concatenated to make a final training set. For an unaugmented version, simply specify num_crops=1.
 
