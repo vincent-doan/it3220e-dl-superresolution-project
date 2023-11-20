@@ -71,7 +71,7 @@ Here is a sample piece of code.
 from data.dataloaders import DIV2KDataLoader
 import matplotlib.pyplot as plt
 
-train_dataloader = DIV2KDataLoader(split="train", downscale_type="bicubic", scale=8, transforms=None, seed=1989, batch_size=1, shuffle=True, num_crops=2)
+train_dataloader = DIV2KDataLoader(split="train", downscale_type="bicubic", scale=8, transforms=None, seed=1989, output_size=(384, 384), batch_size=1, shuffle=True, num_crops=2)
 print("Length of train_dataloader: {}".format(len(train_dataloader)))
 
 lrs, hrs = next(iter(train_dataloader))
