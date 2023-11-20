@@ -101,16 +101,17 @@ Two transformations are automatically done - a 768x768 crop (making sure the con
 Note that the length of the dataloader is now 1600, while the original training set only contains 800. This is because by specifying num_crops=2, we are essentially creating two datasets by cropping each image randomly two times. The two datasets are concatenated to make a final training set. For an unaugmented version, simply specify num_crops=1.
 
 Parameters in consideration when creating a dataloader include
-| Parameter        | Type                  | Values                                                                                                                   | Default  |
-|------------------|-----------------------|--------------------------------------------------------------------------------------------------------------------------|----------|
-| split            | str                   | one of `[‘train’, ‘validation’]` - split of the data to use                                                              | 'train'  |
-| downscale_type   | str                   | one of `['bicubic', 'unknown', 'realistic_mild', 'realistic_difficult', 'realistic_wild']` - type of downscaling method  | 'bicubic'|
-| scale            | int                   | for 'bicubic' downscale_type, one of `[2, 3, 4, 8]` - for 'unknown', one of `[2, 3, 4]` - for others, only `4` - scaling factor | 4 |
-| transforms       | transforms.Compose    | list of transforms for data augmentation                                                                                 | None     |
-| seed             | int                   | a random seed for transformations                                                                                        | 1989     |
-| batch_size       | int                   | number of images per batch                                                                                               | 1        |
-| shuffle          | bool                  | whether to shuffle images in the dataloader                                                                              | True     |
-| num_crops        | int                   | number of random crops - the size of the dataset will be multiplied accordingly                                          | 1        |
+| Parameter        | Type                  | Values                                                                                                                   | Default    |
+|------------------|-----------------------|--------------------------------------------------------------------------------------------------------------------------|------------|
+| split            | str                   | one of `[‘train’, ‘validation’]` - split of the data to use                                                              | 'train'    |
+| downscale_type   | str                   | one of `['bicubic', 'unknown', 'realistic_mild', 'realistic_difficult', 'realistic_wild']` - type of downscaling method  | 'bicubic'  |
+| scale            | int                   | for 'bicubic' downscale_type, one of `[2, 3, 4, 8]` - for 'unknown', one of `[2, 3, 4]` - for others, only `4` - scaling factor | 4   |
+| transforms       | transforms.Compose    | list of transforms for data augmentation                                                                                 | None       |
+| seed             | int                   | a random seed for transformations                                                                                        | 1989       |
+| output_size      | tuple                 | size of cropped images                                                                                                   | (384, 384) | 
+| batch_size       | int                   | number of images per batch                                                                                               | 1          |
+| shuffle          | bool                  | whether to shuffle images in the dataloader                                                                              | True       |
+| num_crops        | int                   | number of random crops - the size of the dataset will be multiplied accordingly                                          | 1          |
 
 After being created, the dataloader can be used as normal.
 
